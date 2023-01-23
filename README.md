@@ -28,16 +28,58 @@ F=(((C.B'.A)+(D.C'.A)+(C.B'.A))')'
 
 ## Logic Diagram
 ## Procedure
+#### Step 1: Create a project with required entities.
+#### Step 2: Create a module along with respective file name.
+#### Step 3: Run the respective programs for the given boolean equations.
+#### Step 4: Run the module and get the respective RTL outputs.
+#### Step 5: Create university program(VWF) for getting timing diagram.
+#### Step 6: Give the respective inputs for timing diagram and obtain the results.
 ## Program:
-/*
 Program to implement the given logic function using NAND and NOR gates and to verify its operations in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
-## RTL realization
 
+Developed by: Ronick Aakshath P
+
+RegisterNumber: 22007303
+### USING NAND OPERATION
+```
+module fourexp(A,B,C,D,F);  
+input A,B,C,D;  
+output F;  
+wire P,Q,R;  
+assign P = C&(~B)&(~A);  
+assign Q = D&(~C)&(~A);  
+assign R = (~C)&B&(~A);  
+assign F = (~P&~Q&~R);  
+endmodule  
+```
+### USING NOR OPERATION
+```
+module fourexp(A,B,C,D,F);  
+input A,B,C,D;  
+output F;  
+wire P,Q,R,S;  
+assign P = C&(~B)&A;  
+assign Q = D&(~C)&A;  
+assign R = C&(~B)&A;  
+assign S = ~(P|Q|R);  
+assign F = ~S;  
+endmodule  
+```
 ## Output:
 ## RTL
+### FOR NAND
+![](nandrtl.png)
+### FOR NOR
+![](norrtl.png)
 ## Timing Diagram
+### FOR NAND
+![](nandtd.png)
+### FOR NOR
+![](nortd.png)
+## Truth Table
+### FOR NAND
+![](nandtt.png)
+### FOR NOR
+![](nortt.png)
 ## Result:
 Thus the given logic functions are implemented using NAND and NOR gates and their operations are verified using Verilog programming.
